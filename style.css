@@ -1,0 +1,120 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+#container{
+    width: 80%;
+    margin: 0% 10%;
+    background-color: #BFC6AF;
+    border-radius: 10px;
+    border: 4px solid #2E8B57;
+}
+*{
+    box-sizing: border-box;
+    font-family: Kanit;
+}
+.flexContainer_col{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+}
+.flexContainer_row{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.flexChild_background{
+    background-color: dimgray;
+    border: 2px solid #BFC6AF;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+}
+.flexChild_background > img{
+    margin: auto;
+}
+#memory{
+    padding: 3rem;
+    align-items: center;
+    border: 2px solid #2E8B57;
+}
+.niceB_blue{
+	background-color: lightskyblue;
+	color: white;
+	border-radius: 8px;
+	padding: 1rem;
+	border: 3px solid dimgray;
+	font-size: 150%;
+    margin-top: 2rem;
+    text-align: center;
+}
+.niceB_gray{
+	background-color: #BFC6AF;
+	color: dimgray;
+	border-radius: 8px;
+	padding: 1rem;
+	border: 3px solid #2E8B57;
+	font-size: 150%;
+    margin-top: 2rem;
+    text-align: center;
+}
+.niceB_red{
+	background-color: orangered;
+	color: white;
+	border-radius: 8px;
+	padding: 1rem;
+	border: 3px solid dimgray;
+	font-size: 150%;
+    margin-top: 2rem;
+    text-align:  center;
+}
+#playerBar{
+    justify-content: space-between;
+    width: 480px;
+}
+#actualPlayer{
+    text-align: center;
+}
+#restart{
+    text-align: center;
+    display: inline-block;	
+	color: dimgray;
+	border-radius: 50%;
+	padding: 0.6rem 1rem;
+	border: 3px solid dimgray;
+	font-size: 250%;
+    margin-top: 2rem;
+}
+#icRestart{
+    display: inline-block;
+    height: 44px;
+    width: 47px;
+    text-align: center;
+    
+}
+#winnerBox{
+    background-color: dimgray;
+    border: 3px solid #2E8B57;
+    border-radius: 4px;
+    margin: 2rem 0;
+    padding: 1rem 5rem;
+}
+#restart_after{
+    text-align: center;
+    display: inline-block;	
+	color: #BFC6AF;
+	border-radius: 50%;
+	padding: 0.6rem 1rem;
+	border: 3px solid #BFC6AF;
+	font-size: 250%;
+    margin-top: 2rem;
+}
+#winnerbox > *{
+    color: #BFC6AF;
+}
+.font_lightgreen{
+    color: #BFC6AF;
+}
+#need_margin{
+    margin: 2rem;
+    font-size: 200%;
+}

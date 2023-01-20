@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!--<script language="javascript" type="text/javascript" src="script.js"></script>-->
+    </head>
+    <body>
+    <section id="container">
+
+        <!--ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+        <!-- MEMORY Bereich inklusive Punkteanzeigen, aktuellem Spieler sowie Restartbutton-->
+        <!--ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+
+        <div class="flexContainer_col" id="memory">
+            <audio src="genjivoice1.mp3" id="genji_voice1"></audio>
+            <audio src="genjivoice2.mp3" id="genji_voice2"></audio>
+
+            <audio src="reapervoice1.mp3" id="reaper_voice1"></audio>
+            <audio src="reapervoice2.mp3" id="reaper_voice2"></audio>
+
+            <audio src="mercyvoice1.mp3" id="mercy_voice1"></audio>
+            <audio src="mercyvoice2.mp3" id="mercy_voice2"></audio>
+
+            <audio src="luciovoice1.mp3" id="lucio_voice1"></audio>
+            <audio src="luciovoice2.mp3" id="lucio_voice2"></audio>
+
+            <audio src="soldiervoice1.mp3" id="soldier_voice1"></audio>
+            <audio src="soldiervoice2.mp3" id="soldier_voice2"></audio>
+
+            <audio src="hanzovoice1.mp3" id="hanzo_voice1"></audio>
+            <audio src="hanzovoice2.mp3" id="hanzo_voice2"></audio>
+
+            <audio src="zenvoice1.mp3" id="zen_voice1"></audio>
+            <audio src="zenvoice2.mp3" id="zen_voice2"></audio>
+
+            <h2 id="playerBox">Player: </h2>
+            <div class="flexContainer_row">
+                <div id="c1" class="flexChild_background"><img class ="card" src="genji2.png" height="110" width ="100"> </img></div>
+                <div id="c2" class="flexChild_background"><img class ="card" src="ana.png" height="110" width ="100"> </img></div>
+                <div id="c3" class="flexChild_background"><img class ="card" src="zenyatta.png" height="110" width ="100"> </img></div>
+                <div id="c4" class="flexChild_background"><img class ="card" src="lucio.png" height="110" width ="100"> </img></div>
+            </div>
+            <div class="flexContainer_row">
+                <div id="c5" class="flexChild_background"><img class ="card" src="ana.png" height="110" width ="100"> </img></div>
+                <div id="c6" class="flexChild_background"><img class ="card" src="reaper.png" height="110" width ="100"> </img></div>
+                <div id="c7" class="flexChild_background"><img class ="card" src="zenyatta.png" height="110" width ="100"> </img></div>
+                <div id="c8" class="flexChild_background"><img class ="card" src="mercy.png" height="110" width ="100"> </img></div>
+            </div>
+            <div class="flexContainer_row">
+                <div id="c9" class="flexChild_background"><img class ="card" src="lucio.png" height="110" width ="100"> </img></div>
+                <div id="c10" class="flexChild_background"><img class ="card" src="genji2.png" height="110" width ="100"> </img></div>
+                <div id="c11" class="flexChild_background"><img class ="card" src="mercy.png" height="110" width ="100"> </img></div>
+                <div id="c12" class="flexChild_background"><img class ="card" src="hanzo.png" height="110" width ="100"> </img></div>
+            </div>
+            <div class="flexContainer_row">
+                <div id="c13" class="flexChild_background"><img class ="card" src="reaper.png" height="110" width ="100"> </img></div>
+                <div id="c14" class="flexChild_background"><img class ="card" src="soldier.png" height="110" width ="100"> </img></div>
+                <div id="c15" class="flexChild_background"><img class ="card" src="hanzo.png" height="110" width ="100"> </img></div>
+                <div id="c16" class="flexChild_background"><img class ="card" src="soldier.png" height="110" width ="100"> </img></div>
+            </div>
+            <div class="flexContainer_row" id="playerBar">
+                <div class="flexContainer_col">
+                    <div id="pointsPlayer1" class="niceB_blue"></div>
+                </div>
+                <div class="flexContainer_col">
+                    <a href="#" id="restart"><i id="icRestart" class="fa fa-refresh" aria-hidden="true"></i></a>
+                </div>
+                <div class="flexContainer_col">
+                    <div id="pointsPlayer2" class="niceB_red"></div>
+                </div>
+                              
+            </div>
+        </div>
+        <!--ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+        <!--     Gewinner Bereich inklusive Endpunktstand, Sieger sowie Restartbutton      -->
+        <!--ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+        <div class="flexContainer_row" id="container_winnerBox">
+            
+            <div id="winnerBox" class="flexContainer_col">
+                <h1 class="font_lightgreen">Endpunktestand</h1>
+                <div class="flexContainer_row">
+                    <div id="endPoints_player1" class="niceB_blue"></div>
+                    <div id="need_margin" class="font_lightgreen">zu</div>
+                    <div id="endPoints_player2" class="niceB_red"></div>
+                </div>
+                <h2 class="font_lightgreen">Herzlichen Glückwunsch Spieler</h2>
+                <div id="winner"></div>
+                <a href="#" id="restart_after"><i id="icRestart" class="fa fa-refresh" aria-hidden="true"></i></a>
+
+            </div>
+                
+        </div>
+    
+    </section>
+
+    <script>
+    //  Variablen-Deklaration
+    var srcPic1 = 5;
+    var srcPic2;
+    var idPic1;
+    var idPic2;
+    var pointsPlayer1 = 0;
+    var pointsPlayer2 = 0;
+    var counter = 0; 
+    var player = 1;
+    var winCounter = 0;
+    var genji_voiceline1 = $("#genji_voice1")[0];
+    var genji_voiceline2 = $("#genji_voice2")[0];
+
+    var lucio_voiceline1 = $("#lucio_voice1")[0];
+    var lucio_voiceline2 = $("#lucio_voice2")[0];
+
+    var reaper_voiceline1 = $("#reaper_voice1")[0];
+    var reaper_voiceline2 = $("#reaper_voice2")[0];
+
+    var mercy_voiceline1 = $("#mercy_voice1")[0];
+    var mercy_voiceline2 = $("#mercy_voice2")[0];
+
+    var hanzo_voiceline1 = $("#hanzo_voice1")[0];
+    var hanzo_voiceline2 = $("#hanzo_voice2")[0];
+    
+    var zen_voiceline1 = $("#zen_voice1")[0];
+    var zen_voiceline2 = $("#zen_voice2")[0];
+
+    var soldier_voiceline1 = $("#soldier_voice1")[0];
+    var soldier_voiceline2 = $("#soldier_voice2")[0];
+
+    //Initialisierung des Startfensters
+    $(".card").hide();
+    $("#container").css("opacity", "0");    
+    $("#container").animate({
+        opacity: 1
+    });
+    $("#container_winnerBox").hide();
+        
+    $("#pointsPlayer1").html(pointsPlayer1);
+    $("#pointsPlayer2").html(pointsPlayer2);
+    $("#playerBox").append("<h1 id='actualPlayer' class='niceB_blue'>" + player + "</h1>");
+    
+    // Funktion des Restart-Buttons inklusive Animation
+    $("#restart").on("click", function(){
+            
+            // Rotate-Animation des Buttons
+            $('#restart').animate({  borderSpacing: -180 }, {
+                step: function(now,fx) {
+                $(this).css('-webkit-transform','rotate('+now+'deg)'); 
+                $(this).css('-moz-transform','rotate('+now+'deg)');
+                $(this).css('transform','rotate('+now+'deg)');
+                },
+                duration:'slow'
+            },'linear');
+            // 800 Millisekunden delay bevor Seite neu geladen wird
+            setTimeout(function(){
+                location.reload();
+            },800);
+            // 300 Millisekunden delay bevor opacity sämtlicher Inhalte animiert wird
+            setTimeout(function(){
+                $("div, a, h1, h2").animate({
+                    opacity: 0.7
+                });
+            },300);
+        });
+
+    $("#restart_after").on("click", function(){
+        
+        $('#restart_after').animate({  borderSpacing: -180 }, {
+            step: function(now,fx) {
+            $(this).css('-webkit-transform','rotate('+now+'deg)'); 
+            $(this).css('-moz-transform','rotate('+now+'deg)');
+            $(this).css('transform','rotate('+now+'deg)');
+            },
+            duration:'slow'
+        },'linear');
+        setTimeout(function(){
+            location.reload();
+        },800);
+        setTimeout(function(){
+            $("div, a, h1, h2").animate({
+                opacity: 0.7
+            });
+        },300);
+    });
+        
+        // Hauptfunktion
+        // Funktion beim Klicken auf eine Memorykarte
+        
+        $(".flexChild_background").on("click", function(){
+                    // Counter zum Zählen der gedrehten Karten wird um 1 erhöht
+                    counter++;
+                    // if($(this+">img").attr('id') == "genji2.png"){
+                        
+                    //     genji_voiceline.play();
+        
+                    // }
+                    
+                    // Wenn Counter = 1 wird die angeklickte Karte einfach umgedreht
+                    // ID und SRC der Karte werden gespeichert
+                    if(counter == 1){
+
+                        idPic1 = $(this).attr('id');
+                        srcPic1 = $("#" + idPic1 + ">img").attr("src");                                                                        
+                        $("#" + idPic1 +">img").fadeToggle(400);
+
+                        if(srcPic1 == "genji2.png"){
+                            genji_voiceline1.play();
+                        }
+                        else if(srcPic1 == "reaper.png"){
+                            reaper_voiceline1.play();
+                        }
+                        else if(srcPic1 == "soldier.png"){
+                            soldier_voiceline1.play();
+                        }
+                        else if(srcPic1 == "mercy.png"){
+                            mercy_voiceline1.play();
+                        }
+                        else if(srcPic1 == "zenyatta.png"){
+                            zen_voiceline1.play();
+                        }
+                        else if(srcPic1 == "hanzo.png"){
+                            hanzo_voiceline1.play();
+                        }
+                        else if(srcPic1  == "ana.png"){
+                            
+                        }
+                        else{
+                            lucio_voiceline1.play();
+                        }
+                        
+                    }
+                    // Wenn Counter = 2 wird die Karte umgedreht
+                    // ID und SRC der Karte werden gespeichert
+                    if(counter == 2){
+
+                        idPic2 = $(this).attr('id');
+                        srcPic2 = $("#" + idPic2 + ">img").attr("src");                                                
+                        $("#" + idPic2 +">img").fadeToggle(400);
+                        if(srcPic2 == "genji2.png"){
+                            genji_voiceline2.play();
+                        }
+                        else if(srcPic2 == "reaper.png"){
+                            reaper_voiceline2.play();
+                        }
+                        else if(srcPic2 == "soldier.png"){
+                            soldier_voiceline2.play();
+                        }
+                        else if(srcPic2 == "mercy.png"){
+                            mercy_voiceline2.play();
+                        }
+                        else if(srcPic2 == "zenyatta.png"){
+                            zen_voiceline2.play();
+                        }
+                        else if(srcPic2 == "hanzo.png"){
+                            hanzo_voiceline2.play();
+                        }
+                        else if(srcPic1  == "ana.png"){
+                            
+                        }
+                        else{
+                            lucio_voiceline2.play();
+                        }
+                        
+                        // Wenn SRC der Karten identisch -> gleiche Bilder
+                        if(srcPic1 == srcPic2){
+
+                            // PULSE Animation
+                            pulse();
+
+                            // Counter zum Zählen der insgesamt richtigen Karten wird um eins erhöht
+                            winCounter++;
+
+                            // aktueller Spieler 1
+                            if(player == 1){
+                                pointsPlayer1++;
+                                // Karten erhalten Hintergrundfarbe des Spielers
+                                $("#" + idPic1).css("background-color","lightskyblue");
+                                $("#" + idPic2).css("background-color","lightskyblue");
+                                // Spieler wird vorzeitig gewechselt, da richtiger Tipp
+                                player = 2;
+                                
+                            }
+                            // aktueller Spieler 2
+                            else{
+                                pointsPlayer2++;
+                                $("#" + idPic1).css("background-color","orangered");
+                                $("#" + idPic2).css("background-color","orangered");
+                                player = 1;
+                               
+                            }
+                            // Wenn die letzten Karten umgedreht wurden
+                            if(winCounter == 8){
+                                // Memorybereich wird ausgebelendet und Winnerbox mit Werten befüllt
+                                $("#memory").fadeOut(1200);
+                                $("#endPoints_player1").html(pointsPlayer1);
+                                $("#endPoints_player2").html(pointsPlayer2);
+                                if(pointsPlayer1 > pointsPlayer2){
+                                    $("#winner").html("1");
+                                    $("#winner").addClass("niceB_blue");
+                                }
+                                else if(pointsPlayer1 < pointsPlayer2){
+                                    $("#winner").html("2");
+                                    $("#winner").addClass("niceB_red");
+                                }
+                                else{
+                                    $("#winner").html("UNENTSCHIEDEN");
+                                    $("#winner").addClass("niceB_gray")
+                                }
+                                setTimeout(function(){
+                                   $("#container_winnerBox").fadeIn(1200);
+                                },1200);
+                            }
+                            
+                            
+                        }
+                        // Wenn SRC von Karte 1 und 2 NICHT identisch -> nicht gleiche Bilder
+                        else{
+                            // Shake-Animation
+                            $("#" + idPic1 +">img").effect("shake");
+                            $("#" + idPic2 +">img").effect("shake");
+                            // delay bevor Bilder ausgebelendet werden
+                            setTimeout(function(){
+                                $("#" + idPic1 +">img").fadeToggle(400);
+                                $("#" + idPic2 +">img").fadeToggle(400);
+                            }, 1000);
+                            
+                        }
+                        // Nun wird der Counter zum zählen der Karten zurückgesetzt
+                        counter = 0;
+                        // aktueller Spieler im nächsten Zug wird bestimmt -> wenn ein Spieler richtig tippt ist er erneut am Zug
+                        if(player == 1){
+                            player = 2;
+                            // Hintergrund des aktuellen Spielers wird bestimmt
+                            $("#actualPlayer").addClass("niceB_red");
+                            $("#actualPlayer").removeClass("niceB_blue");
+                            
+                        }
+                        else{
+                            player = 1;
+                            // Hintergrund des aktuellen Spielers wird bestimmt
+                            $("#actualPlayer").addClass("niceB_blue");
+                            $("#actualPlayer").removeClass("niceB_red");
+                        }                   
+                    }
+                    $("#actualPlayer").html(player);
+                    // aktuelle Punktzahlen werden aktualisiert
+                    $("#pointsPlayer1").html(pointsPlayer1);
+                    $("#pointsPlayer2").html(pointsPlayer2);
+                                
+            
+        });
+        // Funktionsdeklaration PULSE
+        function pulse() {
+            $("#" + idPic1 +">img").animate({
+                width: 100, height: 110, 
+                opacity: 0.8
+            }, 700, function() {
+                $("#" + idPic1 +">img").animate({
+                    width: 110, height: 122, 
+                    opacity: 1
+                }, 700, function() {
+                    $("#" + idPic1 +">img").animate({
+                        width: 100, height: 110,
+                        opacity: 1
+                    });
+                });
+            });
+            $("#" + idPic2 +">img").animate({
+                width: 100, height: 110, 
+                opacity: 0.8
+            }, 700, function() {
+                $("#" + idPic2 +">img").animate({
+                    width: 110, height: 122, 
+                    opacity: 1
+                }, 700, function() {
+                    $("#" + idPic2 +">img").animate({
+                        width: 100, height: 110,
+                        opacity: 1
+                    });
+                });
+            }); 
+            
+        };
+        
+       
+        
+
+    </script>
+    </body>
+</html>
